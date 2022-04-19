@@ -14,3 +14,6 @@ Eventually, when this extension starts getting some functionality, it will be ab
 
 # What's this extension for?
 This is being made as my capstone project for this school year.
+
+# What's the state of this repository?
+It's mostly going to be a mess of files until things start coming together.
