@@ -17,3 +17,9 @@ This is being made as my capstone project for this school year.
 
 # What's the state of this repository?
 It's mostly going to be a mess of files until things start coming together.
+
+# Contributing
+The best way to contribute is by...
+- A: Opening an issue
+  - Within the issue, attach screenshots of scam messages you've recieved, and indicate which website or platform you recieved them on.
+- B: Direct messaging me on Discord at <b>smolyoshino#0626</b>
