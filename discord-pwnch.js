@@ -6,7 +6,7 @@ for (var i = 0; i < knownMessages.length; i++) {
     let stringHandler = knownMessages[i].innerText;
     for(var j=0;j<scamExamples.length;j++){
         if(stringHandler.includes(scamExamples[j]) === true){
-            knownMessages[i].innerHTML = '<span style="color:var(--text-normal);background-color:rgba(255,255,0,0.15);padding:12px;border-radius:8px;">This message has been removed by FruitPwnch due to it containing a scam, or something else harmful to you or your computer.</span>';
+            knownMessages[i].innerHTML = '<div></div><span style="color:var(--text-normal);background-color:rgba(255,255,0,0.15);padding:12px;border-radius:8px;">This message has been removed by FruitPwnch<br>due to it containing a scam,<br>or something else harmful to you or your computer.</span></div>';
         }
     }
 }
