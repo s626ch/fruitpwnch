@@ -3,7 +3,7 @@ An extension to combat falling for scam messages on the web.
 
 # What will this extension do?
 Eventually, when this extension starts getting some functionality, it will be able to...
-- Scan messages on multiple platforms
+- Scan messages on multiple platforms (either with button, or automatically)
   - Discord
   - Twitter
   - Facebook Messenger
