@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "FruitPwnch",
+    "version": "0.0", 
+    "description": "An extension to combat falling for scam messages on the web.",
+    "author": "smolyoshino",
+    "icons": {
+        "16": "16x16.png",
+        "48": "48x48.png",
+        "128": "128x128.png"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "web_accessible_resources":[{
+        "resources":["instructions.html"],
+        "matches": []
+    }]
+}
