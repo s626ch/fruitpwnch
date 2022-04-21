@@ -3,7 +3,7 @@
 // @description Proof of concept script showing the future of FruitPwnch, button injection code taken from Undiscord.
 // @match       *://*.discord.com/*
 // @grant       GM_addStyle
-// @version     0.1.6-release
+// @version     0.2.0-release
 // @author      smolyoshino
 // ==/UserScript==
 
@@ -86,7 +86,25 @@ function checkMessages() {
             removedMessages++;
         }
     }
-    console.log("Removed messages: " + removedMessages);
+    // return value and move notif creation to button initial function??? maybe
+    // return removedMessages;
+    // this creates a notification
+    var zNode = document.createElement('div');
+    zNode.innerHTML = '<span id="notifText"></span>';
+    zNode.setAttribute('id','notifContainer','class','row');
+    // append notification
+    document.body.appendChild(zNode);
+    // set notification text to amount of removed messages
+    document.getElementById("notifText").innerText = "Removed Messages: " + removedMessages;
+    // setup wait function using async/await syntax - https://stackoverflow.com/questions/14226803/wait-5-seconds-before-executing-next-line
+    const delay = ms => new Promise(res => setTimeout(res, ms));
+    // destroy notification when out of view
+    const destroyNodes = async () => {
+        await delay(5005);
+        document.getElementById("notifContainer").remove();
+    }
+    destroyNodes();
+    // todo: remove blank notifs because for some reason spam clicking gives blanks???
 }
 
 // add css styling for this horrendous garbage
@@ -110,5 +128,40 @@ GM_addStyle ( `
     }
     #pwnchButton img:hover {
         filter: grayscale(0);
+    }
+    /* notifications use discord variables to fit in more with the ui, could need adjustments as it still looks...odd. */
+    #notifContainer {
+        position: fixed;
+        top: 60px;
+        right: -256px;
+        font-size: 20px;
+        margin: 0px;
+        opacity: 0.9;
+        z-index: 1100;
+        width: auto;
+        text-align: center;
+        animation: slideIn 5s ease-in-out forwards;
+    }
+    @keyframes slideIn {
+        0% {
+            right: -256px;
+        }
+        5% {
+            right: 16px;
+        }
+        95% {
+            right: 16px;
+        }
+        100% {
+            right: -256px;
+        }
+    }
+    #notifText {
+        color: var(--info-positive-text);
+        padding: 5px 20px;
+        background: var(--background-tertiary);
+        border: 1px solid var(--interactive-normal);
+        border-radius: 4px;
+        font-family: var(--font-primary);
     }
 ` );
