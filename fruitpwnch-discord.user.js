@@ -1,14 +1,18 @@
 // ==UserScript==
 // @name        fruitpwnch-discord
-// @description Proof of concept script showing the future of FruitPwnch, button injection code taken from Undiscord.
+// @description Proof of concept script showing the future of FruitPwnch
 // @match       *://*.discord.com/*
 // @grant       GM_addStyle
-// @version     0.2.0-release
+// @version     0.2.7-release
 // @author      smolyoshino
 // ==/UserScript==
 
 // list of scam strings
 let scamExamples = ['Discord Nitro for Free - Steam Store', 'Discord nitro distribution', 'Discord Nitro for Free', ' https://dlscordgived.xyz/', 'https://discord-app.net/', 'BTC charity draw', 'You are one of the lucky winners of our giveaway', 'Crypto Discord Channels', 'Giveaway News! Congratulations!', 'Free distribution of discord nitro', 'best pump signals', 'the right strategies for making money', 'she made ur dick hard... join back'];
+// setup wait function using async/await syntax - https://stackoverflow.com/questions/14226803/wait-5-seconds-before-executing-next-line
+const delay = ms => new Promise(res => setTimeout(res, ms));
+
+// TODO: rework class checks so i don't have to update the script when classes get rerolled
 
 // glass of punch button, this calls the scan function below ---------------------------------------------------------------------------
 
@@ -45,7 +49,27 @@ const observer = new MutationObserver(function (_mutationsList, _observer) {
 observer.observe(document.body, { attributes: false, childList: true, subtree: true });
 mountBtn();
 
-
+// this is to spawn a welcome message upon page load, that's it.
+// create a dummy check to start an inf loop until i want it to stop
+let dummyCheck = false;
+// set to async to add delay
+const welcomeMsg = async () => {
+    // start controllable inf loop
+    while(dummyCheck === false) {
+        // another premature notif spawn check, we don't want a notification appearing before discord even loads--this is a catchall for slow network users
+        if(document.getElementById("app-mount") !== null){
+            // wait 2 seconds between each check; this will hopefully stop premature notification spawning
+            await delay(2000);
+            // finally, spawn a notification if the loading screen is not present
+            // CLASS REROLL <-- note to find this line again if classes get rerolled
+            if(document.querySelector("#app-mount > div.app-3xd6d0 > div.container-2RRFHK.fixClipping-3GOd_d") === null) {
+                spawnNotification("Welcome to FruitPwnch!\nClick the new icon in the top bar\nto check any suspicious messages.", 6005);
+                dummyCheck = true;
+            }
+        }
+    }
+}
+welcomeMsg();
 
 // scan visible messages, replace any that match list of scams with a warning.
 pwnchIcon.onclick = function fruitPwnch(zEvent) {
@@ -64,6 +88,7 @@ function disableclick(event) {
 // allow messages to be replaced before calling the message check, this is better for synchronous work, probably
 // this actually replaces messages
 function replaceMessages() {
+    // CLASS REROLL <-- note to find this line again if classes get rerolled
     let knownMessages = document.getElementsByClassName("message-2CShn3");
     for (var i = 0; i < knownMessages.length; i++) {
         // console.log(knownMessages[i].innerText);
@@ -77,6 +102,7 @@ function replaceMessages() {
 }
 // this *checks* the messages *after* they've been replaced, to tell the user how many have been replaced, if any.
 function checkMessages() {
+    // CLASS REROLL <-- note to find this line again if classes get rerolled
     let knownMessages = document.getElementsByClassName("message-2CShn3");
     let removedMessages = 0
     for (var hh = 0; hh < knownMessages.length; hh++) {
@@ -86,8 +112,13 @@ function checkMessages() {
             removedMessages++;
         }
     }
-    // return value and move notif creation to button initial function??? maybe
-    // return removedMessages;
+    // check if any notifications already exist and try to circumvent issue with spam click creating blank notifs
+    if(document.getElementById("notifContainer") === null){
+        spawnNotification("Removed Messages: " + removedMessages, 5005);
+    }
+}
+
+function spawnNotification(messageText, deleteTime) {
     // this creates a notification
     var zNode = document.createElement('div');
     zNode.innerHTML = '<span id="notifText"></span>';
@@ -95,16 +126,13 @@ function checkMessages() {
     // append notification
     document.body.appendChild(zNode);
     // set notification text to amount of removed messages
-    document.getElementById("notifText").innerText = "Removed Messages: " + removedMessages;
-    // setup wait function using async/await syntax - https://stackoverflow.com/questions/14226803/wait-5-seconds-before-executing-next-line
-    const delay = ms => new Promise(res => setTimeout(res, ms));
+    document.getElementById("notifText").innerText = messageText;
     // destroy notification when out of view
-    const destroyNodes = async () => {
-        await delay(5005);
+    const destroyNode = async () => {
+        await delay(deleteTime);
         document.getElementById("notifContainer").remove();
     }
-    destroyNodes();
-    // todo: remove blank notifs because for some reason spam clicking gives blanks???
+    destroyNode();
 }
 
 // add css styling for this horrendous garbage
@@ -139,12 +167,19 @@ GM_addStyle ( `
         opacity: 0.9;
         z-index: 1100;
         width: auto;
-        text-align: center;
+        text-align: right;
         animation: slideIn 5s ease-in-out forwards;
+        /* */
+        color: var(--info-positive-text);
+        padding: 5px 20px;
+        background: var(--background-tertiary);
+        border: 1px solid var(--interactive-normal);
+        border-radius: 4px;
+        font-family: var(--font-primary);
     }
     @keyframes slideIn {
         0% {
-            right: -256px;
+            right: -100%;
         }
         5% {
             right: 16px;
@@ -153,15 +188,15 @@ GM_addStyle ( `
             right: 16px;
         }
         100% {
-            right: -256px;
+            right: -100%;
         }
     }
     #notifText {
-        color: var(--info-positive-text);
+        /*color: var(--info-positive-text);
         padding: 5px 20px;
         background: var(--background-tertiary);
         border: 1px solid var(--interactive-normal);
         border-radius: 4px;
-        font-family: var(--font-primary);
+        font-family: var(--font-primary);*/
     }
 ` );
