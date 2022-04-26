@@ -1,4 +1,4 @@
-# fruitpwnch-master
+# fruitpwnch
 An extension to combat falling for scam messages on the web.
 
 # What currently works?
