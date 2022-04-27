@@ -162,20 +162,23 @@ GM_addStyle ( `
         position: fixed;
         top: 60px;
         right: -256px;
-        font-size: 20px;
+        font-size: 16px;
+        line-height: 18px;
         margin: 0px;
-        opacity: 0.9;
+        /*opacity: 0.9;*/
         z-index: 1100;
         width: auto;
         text-align: right;
         animation: slideIn 5s ease-in-out forwards;
         /* */
-        color: var(--info-positive-text);
-        padding: 5px 20px;
-        background: var(--background-secondary);
-        border: 1px solid var(--interactive-normal);
-        border-radius: 4px;
+        color: var(--text-normal);
+        padding: 10px 20px;
+        /*background: var(--background-secondary);*/
+        background-color: var(--background-floating);
+        border-radius: 8px;
+        /*border: 1px solid var(--interactive-normal);*/
         font-family: var(--font-primary);
+        box-shadow: var(--elevation-high);
     }
     @keyframes slideIn {
         0% {
