@@ -2,6 +2,7 @@
 An extension to combat falling for scam messages on the web.
 
 # What currently works?
+The extension now independently injects the Discord script, however, the userscript will continue being supported.<br><br><br>
 There is a work in progress userscript being made as a proof of concept.<br>
 To test it, please install [Tampermonkey](https://www.tampermonkey.net/), then [click here.](https://github.com/smolyoshino/fruitpwnch-master/raw/master/fruitpwnch-discord.user.js)
 
