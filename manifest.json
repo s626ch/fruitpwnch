@@ -12,6 +12,13 @@
     "background": {
         "service_worker": "background.js"
     },
+    "content_scripts": [
+        {
+            "matches": ["*://*.discord.com/*"],
+            "js": ["fruitpwnch-discord.js"]
+        }
+    ],
+    "host_permissions": ["<all_urls>"],
     "web_accessible_resources":[{
         "resources":["instructions.html"],
         "matches": []
