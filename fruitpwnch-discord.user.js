@@ -172,7 +172,7 @@ GM_addStyle ( `
         /* */
         color: var(--info-positive-text);
         padding: 5px 20px;
-        background: var(--background-tertiary);
+        background: var(--background-secondary);
         border: 1px solid var(--interactive-normal);
         border-radius: 4px;
         font-family: var(--font-primary);
