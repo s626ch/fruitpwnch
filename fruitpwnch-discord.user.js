@@ -3,7 +3,7 @@
 // @description Proof of concept script showing the future of FruitPwnch
 // @match       *://*.discord.com/*
 // @grant       GM_addStyle
-// @version     0.2.7-1
+// @version     0.2.7-2
 // @author      smolyoshino
 // ==/UserScript==
 
@@ -95,7 +95,7 @@ function replaceMessages() {
         let stringHandler = knownMessages[i].innerText;
         for(var j=0;j<scamExamples.length;j++){
             if(stringHandler.includes(scamExamples[j]) === true){
-                knownMessages[i].innerHTML = '<div style="background-color:rgba(255,255,0,0.15);padding:12px;border-radius:8px;"><span style="color:var(--text-normal);">This message has been removed by FruitPwnch due to it containing a scam,<br>or something else harmful to you or your computer.</span></div>';
+                knownMessages[i].innerHTML = '<div style="background-color:var(--background-modifier-accent);padding:12px;border-radius:8px;"><span style="color:var(--text-normal);">This message has been removed by FruitPwnch due to it containing a scam,<br>or something else harmful to you or your computer.</span></div>';
             }
         }
     }
