@@ -3,7 +3,7 @@
 // @description Proof of concept script showing the future of FruitPwnch
 // @match       *://*.discord.com/*
 // @grant       GM_addStyle
-// @version     0.2.7-release
+// @version     0.2.7-1
 // @author      smolyoshino
 // ==/UserScript==
 
