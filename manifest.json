@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
-    "name": "FruitPwnch",
-    "version": "0.0", 
+    "name": "fruitpwnch",
+    "version": "0.5", 
     "description": "An extension to combat falling for scam messages on the web.",
     "author": "smolyoshino",
     "icons": {
