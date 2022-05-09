@@ -1,0 +1,65 @@
+#pwnchButton {
+    background: none;
+    border: none;
+    padding: none;
+    position: relative;
+    height: 24px;
+    width: auto;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    margin: 0 8px;
+    cursor: pointer;
+}
+#pwnchButton img {
+    filter: grayscale(1);
+    transition: filter 0.25s ease-in-out;
+}
+#pwnchButton img:hover {
+    filter: grayscale(0);
+}
+/* notifications use discord variables to fit in more with the ui, could need adjustments as it still looks...odd. */
+#notifContainer {
+    position: fixed;
+    top: 86px;
+    right: -256px;
+    font-size: 16px;
+    line-height: 18px;
+    margin: 0px;
+    /*opacity: 0.9;*/
+    z-index: 1100;
+    width: auto;
+    text-align: right;
+    animation: slideIn 5s ease-in-out forwards;
+    /* */
+    color: var(--text-normal);
+    padding: 10px 20px;
+    /*background: var(--background-secondary);*/
+    background-color: var(--background-floating);
+    border-radius: 8px;
+    /*border: 1px solid var(--interactive-normal);*/
+    font-family: var(--font-primary);
+    box-shadow: var(--elevation-high);
+}
+@keyframes slideIn {
+    0% {
+        right: -100%;
+    }
+    5% {
+        right: 16px;
+    }
+    95% {
+        right: 16px;
+    }
+    100% {
+        right: -100%;
+    }
+}
+#notifText {
+    /*color: var(--info-positive-text);
+    padding: 5px 20px;
+    background: var(--background-tertiary);
+    border: 1px solid var(--interactive-normal);
+    border-radius: 4px;
+    font-family: var(--font-primary);*/
+}
