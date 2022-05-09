@@ -1,28 +1,39 @@
-# fruitpwnch
-An extension to combat falling for scam messages on the web.
+<div align="center">
+  <h1>fruitpwnch</h1>
+  <p>An extension to combat falling for scam messages on the web.</p>
+  <img src="https://github.com/smolyoshino/fruitpwnch-master/blob/master/fruitpwnch.png?raw=true" alt="FruitPwnch logo" />
+  <br/>
+  <br/>
+  <p><a href="https://powercord.dev/">Powercord</a> plugin available <a href="https://github.com/smolyoshino/fruitpwnch-master/tree/master/pc-fruitpwnch">here!</a>
+</div>
 
-# What currently works?
-The extension now independently injects the Discord script, however, the userscript will continue being supported.<br><br><br>
-There is a work in progress userscript being made as a proof of concept.<br>
-To test it, please install [Tampermonkey](https://www.tampermonkey.net/), then [click here.](https://github.com/smolyoshino/fruitpwnch-master/raw/master/fruitpwnch-discord.user.js)
+# Installation
+fruitpwnch can be installed as an <b>extension for chromium browsers</b>, a <b><a href="https://powercord.dev/">Powercord</a> plugin</b>, or a <b>Userscript with <a href="https://www.tampermonkey.net/">Tampermonkey</a>.</b><br>
+### Installation on Chromium browsers
+To install, download the repository as a zip, then unzip the file, go to your browser's extensions page,<br/>
+enable developer mode, then click `Load Unpacked.`<br/>
+After, please locate the folder with the extension's files within it, select the folder, and it should load.
+### Installation for [Powercord](https://powercord.dev/)
+At the current moment, you <b>cannot</b> simply `git clone` this folder into powercord.<br/>
+You have to do a similar thing to the above Chromium instructions, but once the source is unzipped,<br/>
+You must <b>copy</b> the `pc-fruitpwnch` folder into your Powercord `plugins` folder.<br/>
+### Installation with [Tampermonkey](https://www.tampermonkey.net/)
+Simply [click here.](https://github.com/smolyoshino/fruitpwnch-master/raw/master/fruitpwnch-discord.user.js)
+<br><br><br>
+# What does this project do?
+fruitpwnch was built to combat people falling for scam messages on social networking platforms.<br/>
+As of right now, it only works with <a href="https://discord.gg/">Discord</a>.
+In the future however, this project will work with:
+- Twitter
+- Facebook Messenger
+- etc.
 
-# What will this extension do?
-Eventually, when this extension starts getting some functionality, it will be able to...
-- Scan messages on multiple platforms (either with button, or automatically)
-  - Discord
-  - Twitter
-  - Facebook Messenger
-  - etc.
-- Challenge message content against a list of known scam messages
-- If the message loosely matches a known scam, remove the message from the page
-- Give user the ability to unhide the message, if they want to
-
-# What's this extension for?
+Soon, there will be the ability to restore a message.\*<br/><br/>
+<i>(\*: This is not a high priority feature however.)</i>
+<br><br><br>
+# What was this project initially created for?
 This is being made as my capstone project for this school year.
-
-# What's the state of this repository?
-It's mostly going to be a mess of files until things start coming together.
-
+<br><br><br>
 # Contributing
 The best way to contribute is by...
 - A: Opening an issue
