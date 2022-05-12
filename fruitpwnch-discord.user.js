@@ -3,12 +3,12 @@
 // @description Proof of concept script showing the future of FruitPwnch
 // @match       *://*.discord.com/*
 // @grant       GM_addStyle
-// @version     0.3-release
+// @version     0.3.1-release
 // @author      smolyoshino
 // ==/UserScript==
 
 // list of scam strings
-let scamExamples = ['Discord Nitro for Free - Steam Store', 'Discord nitro distribution', 'Discord Nitro for Free', ' https://dlscordgived.xyz/', 'https://discord-app.net/', 'BTC charity draw', 'You are one of the lucky winners of our giveaway', 'Crypto Discord Channels', 'Giveaway News! Congratulations!', 'Free distribution of discord nitro', 'best pump signals', 'the right strategies for making money', 'she made ur dick hard... join back'];
+let scamExamples = ['Discord Nitro for Free - Steam Store', 'Discord nitro distribution', 'Discord Nitro for Free', ' https://dlscordgived.xyz/', 'https://discord-app.net/', 'BTC charity draw', 'You are one of the lucky winners of our giveaway', 'Crypto Discord Channels', 'Giveaway News! Congratulations!', 'Free distribution of discord nitro', 'best pump signals', 'the right strategies for making money', 'she made ur dick hard... join back', 'Hi bro, i made game can you rate pls', 'Hi bro, you can rate my game pls', 'https://hypesquad-selections.com/', 'I lost about a hundred of dollars via credit card', 'Sorry to bother you is this your steam account?', 'reported you for doing illegal purchasing', 'someone who had the same steam profile and name'];
 // setup wait function using async/await syntax - https://stackoverflow.com/questions/14226803/wait-5-seconds-before-executing-next-line
 const delay = ms => new Promise(res => setTimeout(res, ms));
 
