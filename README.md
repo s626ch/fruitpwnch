@@ -18,7 +18,7 @@ At the current moment, you <b>cannot</b> simply `git clone` this folder into pow
 You have to do a similar thing to the above Chromium instructions, but once the source is unzipped,<br/>
 You must <b>copy</b> the `pc-fruitpwnch` folder into your Powercord `plugins` folder.<br/>
 ### Installation with [Tampermonkey](https://www.tampermonkey.net/)
-Simply [click here.](https://github.com/smolyoshino/fruitpwnch-master/raw/master/fruitpwnch-discord.user.js)
+Simply [click here](https://github.com/smolyoshino/fruitpwnch-master/raw/master/fruitpwnch-discord.user.js) after installing Tampermonkey for your browser.
 <br><br><br>
 # What does this project do?
 fruitpwnch was built to combat people falling for scam messages on social networking platforms.<br/>
