@@ -1,7 +1,5 @@
 // open page upon install instructing users how to use this piece of shit
 // https://stackoverflow.com/questions/5745822/open-a-help-page-after-chrome-extension-is-installed-first-time/24429523#24429523
-// console.warn("nuts nuts nuts");
-// console.error("nuts nuts nuts");
 chrome.runtime.onInstalled.addListener(function (object) {
     let internalUrl = chrome.runtime.getURL("instructions.html");
 
