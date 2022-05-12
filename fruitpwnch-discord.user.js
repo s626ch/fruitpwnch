@@ -160,7 +160,7 @@ GM_addStyle ( `
     /* notifications use discord variables to fit in more with the ui, could need adjustments as it still looks...odd. */
     #notifContainer {
         position: fixed;
-        top: 86px;
+        top: 60px;
         right: -256px;
         font-size: 16px;
         line-height: 18px;
