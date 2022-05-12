@@ -63,9 +63,9 @@ const welcomeMsg = async () => {
         if(document.getElementById("app-mount") !== null){
             // wait 2 seconds between each check; this will hopefully stop premature notification spawning
             await delay(2000);
-            // finally, spawn a notification if the loading screen is not present
-            // CLASS REROLL <-- note to find this line again if classes get rerolled
-            if(document.querySelector("#app-mount > div.app-3xd6d0 > div.container-2RRFHK.fixClipping-3GOd_d") === null) {
+            // finally, spawn a notification if the loading screen is not present, query select is now class re-roll proof.
+            if(document.querySelector("#app-mount > div[class^=app] > div[class^=fixClipping]") === null) {
+                await delay(6000);
                 spawnNotification("Welcome to FruitPwnch!\nClick the new icon in the top bar\nto check any suspicious messages.", 6005);
                 dummyCheck = true;
             }
@@ -89,10 +89,10 @@ function disableclick(event) {
 }
 
 // allow messages to be replaced before calling the message check, this is better for synchronous work, probably
-// this actually replaces messages
+// this actually replaces messages, also it's now class re-roll proof.
 function replaceMessages() {
-    // CLASS REROLL <-- note to find this line again if classes get rerolled
-    let knownMessages = document.getElementsByClassName("message-2CShn3");
+    //let knownMessages = document.getElementsByClassName("message-2CShn3");
+    let knownMessages = document.querySelectorAll('li[class^=messageListItem] > div[class^=message]')
     for (var i = 0; i < knownMessages.length; i++) {
         // console.log(knownMessages[i].innerText);
         let stringHandler = knownMessages[i].innerText;
@@ -103,10 +103,10 @@ function replaceMessages() {
         }
     }
 }
-// this *checks* the messages *after* they've been replaced, to tell the user how many have been replaced, if any.
+// this *checks* the messages *after* they've been replaced, to tell the user how many have been replaced, if any. also class re-roll proof.
 function checkMessages() {
-    // CLASS REROLL <-- note to find this line again if classes get rerolled
-    let knownMessages = document.getElementsByClassName("message-2CShn3");
+    //let knownMessages = document.getElementsByClassName("message-2CShn3");
+    let knownMessages = document.querySelectorAll('li[class^=messageListItem] > div[class^=message]')
     let removedMessages = 0
     for (var hh = 0; hh < knownMessages.length; hh++) {
         let stringHandler = knownMessages[hh].innerText;
@@ -196,13 +196,5 @@ addStyle( `
         100% {
             right: -100%;
         }
-    }
-    #notifText {
-        /*color: var(--info-positive-text);
-        padding: 5px 20px;
-        background: var(--background-tertiary);
-        border: 1px solid var(--interactive-normal);
-        border-radius: 4px;
-        font-family: var(--font-primary);*/
     }
 ` );
