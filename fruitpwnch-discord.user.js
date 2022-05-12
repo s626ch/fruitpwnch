@@ -3,12 +3,12 @@
 // @description Proof of concept script showing the future of FruitPwnch
 // @match       *://*.discord.com/*
 // @grant       GM_addStyle
-// @version     0.2.72
+// @version     0.3-release
 // @author      smolyoshino
 // ==/UserScript==
 
 // list of scam strings
-let scamExamples = ['Discord Nitro for Free - Steam Store', 'Discord nitro distribution', 'Discord Nitro for Free', ' https://dlscordgived.xyz/', 'https://discord-app.net/', 'BTC charity draw', 'You are one of the lucky winners of our giveaway', 'Crypto Discord Channels', 'Giveaway News! Congratulations!', 'Free distribution of discord nitro', 'best pump signals', 'the right strategies for making money', 'she made ur dick hard... join back', 'Hi bro, i made game can you rate pls', 'Hi bro, you can rate my game pls', 'https://hypesquad-selections.com/'];
+let scamExamples = ['Discord Nitro for Free - Steam Store', 'Discord nitro distribution', 'Discord Nitro for Free', ' https://dlscordgived.xyz/', 'https://discord-app.net/', 'BTC charity draw', 'You are one of the lucky winners of our giveaway', 'Crypto Discord Channels', 'Giveaway News! Congratulations!', 'Free distribution of discord nitro', 'best pump signals', 'the right strategies for making money', 'she made ur dick hard... join back'];
 // setup wait function using async/await syntax - https://stackoverflow.com/questions/14226803/wait-5-seconds-before-executing-next-line
 const delay = ms => new Promise(res => setTimeout(res, ms));
 
@@ -60,9 +60,9 @@ const welcomeMsg = async () => {
         if(document.getElementById("app-mount") !== null){
             // wait 2 seconds between each check; this will hopefully stop premature notification spawning
             await delay(2000);
-            // finally, spawn a notification if the loading screen is not present
-            // CLASS REROLL <-- note to find this line again if classes get rerolled
-            if(document.querySelector("#app-mount > div.app-3xd6d0 > div.container-2RRFHK.fixClipping-3GOd_d") === null) {
+            // finally, spawn a notification if the loading screen is not present, query select is now class re-roll proof.
+            if(document.querySelector("#app-mount > div[class^=app] > div[class^=fixClipping]") === null) {
+                await delay(6000);
                 spawnNotification("Welcome to FruitPwnch!\nClick the new icon in the top bar\nto check any suspicious messages.", 6005);
                 dummyCheck = true;
             }
@@ -86,10 +86,10 @@ function disableclick(event) {
 }
 
 // allow messages to be replaced before calling the message check, this is better for synchronous work, probably
-// this actually replaces messages
+// this actually replaces messages, also it's now class re-roll proof.
 function replaceMessages() {
-    // CLASS REROLL <-- note to find this line again if classes get rerolled
-    let knownMessages = document.getElementsByClassName("message-2CShn3");
+    //let knownMessages = document.getElementsByClassName("message-2CShn3");
+    let knownMessages = document.querySelectorAll('li[class^=messageListItem] > div[class^=message]')
     for (var i = 0; i < knownMessages.length; i++) {
         // console.log(knownMessages[i].innerText);
         let stringHandler = knownMessages[i].innerText;
@@ -100,10 +100,10 @@ function replaceMessages() {
         }
     }
 }
-// this *checks* the messages *after* they've been replaced, to tell the user how many have been replaced, if any.
+// this *checks* the messages *after* they've been replaced, to tell the user how many have been replaced, if any. also class re-roll proof.
 function checkMessages() {
-    // CLASS REROLL <-- note to find this line again if classes get rerolled
-    let knownMessages = document.getElementsByClassName("message-2CShn3");
+    //let knownMessages = document.getElementsByClassName("message-2CShn3");
+    let knownMessages = document.querySelectorAll('li[class^=messageListItem] > div[class^=message]')
     let removedMessages = 0
     for (var hh = 0; hh < knownMessages.length; hh++) {
         let stringHandler = knownMessages[hh].innerText;
@@ -152,7 +152,7 @@ GM_addStyle ( `
     }
     #pwnchButton img {
         filter: grayscale(1);
-        transition: filter 0.25s ease-in-out;
+        transition: filter 0.15s ease-in-out;
     }
     #pwnchButton img:hover {
         filter: grayscale(0);
@@ -160,7 +160,7 @@ GM_addStyle ( `
     /* notifications use discord variables to fit in more with the ui, could need adjustments as it still looks...odd. */
     #notifContainer {
         position: fixed;
-        top: 60px;
+        top: 86px;
         right: -256px;
         font-size: 16px;
         line-height: 18px;
@@ -193,13 +193,5 @@ GM_addStyle ( `
         100% {
             right: -100%;
         }
-    }
-    #notifText {
-        /*color: var(--info-positive-text);
-        padding: 5px 20px;
-        background: var(--background-tertiary);
-        border: 1px solid var(--interactive-normal);
-        border-radius: 4px;
-        font-family: var(--font-primary);*/
     }
 ` );
