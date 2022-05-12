@@ -12,8 +12,6 @@ let scamExamples = ['Discord Nitro for Free - Steam Store', 'Discord nitro distr
 // setup wait function using async/await syntax - https://stackoverflow.com/questions/14226803/wait-5-seconds-before-executing-next-line
 const delay = ms => new Promise(res => setTimeout(res, ms));
 
-// TODO: rework class checks so i don't have to update the script when classes get rerolled
-
 // glass of punch button, this calls the scan function below ---------------------------------------------------------------------------
 
 // oh also this create element function was taken from Undiscord
