@@ -4,12 +4,13 @@
 // @match       *://*.roblox.com/*
 // @exclude     *//*.roblox.com/user-sponsorship*
 // @grant       GM_addStyle
-// @version     0.1.6-release
+// @version     0.1.7-release
 // @author      smolyoshino
 // ==/UserScript==
 
-// oh my god i need to make sure it doesn't activate when the sign up page is visible oh god
+// oh my god i need to make sure it doesn't activate when the sign up/login page is visible oh god
 if(document.getElementById("signup-container") === null) {
+if(document.getElementById("login-base") === null {
 // list of scam strings, very rudimentary at the moment, please submit messages!!!
 let scamExamples = ['Hey, do you mind reading my offer?'];
 // setup wait function using async/await syntax - https://stackoverflow.com/questions/14226803/wait-5-seconds-before-executing-next-line
@@ -121,6 +122,7 @@ function spawnNotification(messageText, deleteTime) {
         document.getElementById("notifContainer").remove();
     }
     destroyNode();
+}
 }
 }
 
