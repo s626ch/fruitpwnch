@@ -2,8 +2,8 @@
 // @name         fruitpwnch-roblox
 // @description fruitpwnch's Roblox standalone UserScript
 // @match       *://*.roblox.com/*
-// @exclude     *//*.roblox.com/user-sponsorship*
-// @exclude     *//*.roblox.com/login*
+// @exclude     *://*.roblox.com/user-sponsorship*
+// @exclude     *://*.roblox.com/login*
 // @grant       GM_addStyle
 // @version     0.1.7-release
 // @author      smolyoshino
