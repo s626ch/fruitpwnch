@@ -61,7 +61,7 @@ const welcomeMsg = async () => {
             // finally, spawn a notification if the loading screen is not present, query select is now class re-roll proof.
             if(document.querySelector("#app-mount > div[class^=app] > div[class^=fixClipping]") === null) {
                 await delay(6000);
-                spawnNotification("Welcome to <b>fruitpwnch</b>!\nClick the new icon in the top bar\nto check any suspicious messages.", 6005);
+                spawnNotification("Welcome to fruitpwnch!\nClick the new icon in the top bar\nto check any suspicious messages.", 6005);
                 dummyCheck = true;
             }
         }
@@ -93,7 +93,7 @@ function replaceMessages() {
         let stringHandler = knownMessages[i].innerText;
         for(var j=0;j<scamExamples.length;j++){
             if(stringHandler.includes(scamExamples[j]) === true){
-                knownMessages[i].innerHTML = '<div style="background-color:var(--background-modifier-accent);padding:12px;border-radius:8px;"><span style="color:var(--text-normal);">This message has been removed by <b>fruitpwnch</b> due to it containing a scam,<br>or something else harmful to you or your computer.</span></div>';
+                knownMessages[i].innerHTML = '<div style="background-color:var(--background-modifier-accent);padding:12px;border-radius:8px;"><span style="color:var(--text-normal);">This message has been removed by fruitpwnch due to it containing a scam,<br>or something else harmful to you or your computer.</span></div>';
             }
         }
     }
