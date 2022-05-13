@@ -132,6 +132,7 @@ GM_addStyle ( `
         border: none;
         padding: none;
         cursor: pointer;
+        margin-left: 6px;
     }
     #pwnchButton img {
         filter: grayscale(1);
