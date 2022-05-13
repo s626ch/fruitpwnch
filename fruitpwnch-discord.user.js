@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        fruitpwnch-discord
-// @description Proof of concept script showing the future of FruitPwnch
+// @description fruitpwnch's Discord browser standalone UserScript
 // @match       *://*.discord.com/*
 // @grant       GM_addStyle
 // @version     0.3.1-release
