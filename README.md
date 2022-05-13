@@ -18,11 +18,13 @@ At the current moment, you <b>cannot</b> simply `git clone` this folder into pow
 You have to do a similar thing to the above Chromium instructions, but once the source is unzipped,<br/>
 You must <b>copy</b> the `pc-fruitpwnch` folder into your Powercord `plugins` folder.<br/>
 ### Installation with [Tampermonkey](https://www.tampermonkey.net/)
-Simply [click here](https://github.com/smolyoshino/fruitpwnch-master/raw/master/fruitpwnch-discord.user.js) after installing Tampermonkey for your browser.
+After installing Tampermonkey for your browser, click the following links:<br/>
+- [Click here for the Discord script.](https://github.com/smolyoshino/fruitpwnch-master/raw/master/fruitpwnch-discord.user.js)
+- [Click here for the Roblox script.](https://github.com/smolyoshino/fruitpwnch-master/raw/master/fruitpwnch-roblox.user.js)
 <br><br><br>
 # What does this project do?
 fruitpwnch was built to combat people falling for scam messages on social networking platforms.<br/>
-As of right now, it only works with <a href="https://discord.gg/">Discord</a>.
+As of right now, it only works with [Discord](https://discord.gg/), and [Roblox](https://roblox.com/).
 In the future however, this project will work with:
 - Twitter
 - Facebook Messenger
