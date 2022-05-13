@@ -24,7 +24,7 @@ After installing Tampermonkey for your browser, click the following links:<br/>
 <br><br><br>
 # What does this project do?
 fruitpwnch was built to combat people falling for scam messages on social networking platforms.<br/>
-As of right now, it only works with [Discord](https://discord.gg/), and [Roblox](https://roblox.com/).
+As of right now, it only works with [Discord](https://discord.gg/), and [Roblox](https://roblox.com/).<br/><br/>
 In the future however, this project will work with:
 - Twitter
 - Facebook Messenger
