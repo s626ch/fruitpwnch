@@ -14,9 +14,7 @@ To install, download the repository as a zip, then unzip the file, go to your br
 enable developer mode, then click `Load Unpacked.`<br/>
 After, please locate the folder with the extension's files within it, select the folder, and it should load.
 ### Installation for [Powercord](https://powercord.dev/)
-At the current moment, you <b>cannot</b> simply `git clone` this folder into powercord.<br/>
-You have to do a similar thing to the above Chromium instructions, but once the source is unzipped,<br/>
-You must <b>copy</b> the `pc-fruitpwnch` folder into your Powercord `plugins` folder.<br/>
+Simply run `git clone https://github.com/smolyoshino/pc-fruitpwnch/` within your Powercord plugins folder.<br/>
 ### Installation with [Tampermonkey](https://www.tampermonkey.net/)
 After installing Tampermonkey for your browser, click the following links:<br/>
 - [Click here for the Discord script.](https://github.com/smolyoshino/fruitpwnch-master/raw/master/fruitpwnch-discord.user.js)
