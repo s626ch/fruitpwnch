@@ -4,7 +4,7 @@
   <img src="https://github.com/smolyoshino/fruitpwnch-master/blob/master/fruitpwnch.png?raw=true" alt="FruitPwnch logo" />
   <br/>
   <br/>
-  <p><a href="https://powercord.dev/">Powercord</a> plugin available <a href="https://github.com/smolyoshino/fruitpwnch-master/tree/master/pc-fruitpwnch">here!</a>
+  <p><a href="https://powercord.dev/">Powercord</a> plugin available <a href="https://github.com/smolyoshino/pc-fruitpwnch">here!</a>
 </div>
 
 # Installation
