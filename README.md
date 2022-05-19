@@ -32,7 +32,8 @@ Soon, there will be the ability to restore a message.\*<br/><br/>
 <i>(\*: This is not a high priority feature however.)</i>
 <br><br><br>
 # What was this project initially created for?
-This is being made as my capstone project for this school year.
+This is being made as my capstone project for this school year.<br/>
+[Youtube presentation available here!](https://youtu.be/muyV-ObfHWU)
 <br><br><br>
 # Contributing
 The best way to contribute is by...
